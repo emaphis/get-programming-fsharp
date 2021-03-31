@@ -1,13 +1,28 @@
-// Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
+// Application from the Try Me.
 
 open System
+open System.Net
+open System.Windows.Forms
 
-// Define a function to construct a message to print
-let from whom =
-    sprintf "from %s" whom
+let createWebForm(url) =
+    let getWebText() =
+        let webClient = new WebClient()
+        let fsharpOrg = webClient.DownloadString(Uri url)
+        fsharpOrg
+
+    let createBrowser =
+        new WebBrowser(ScriptErrorsSuppressed = true,
+                       Dock = DockStyle.Fill,
+                       DocumentText = getWebText())
+        
+    let form = new Form(Text = "Hello from F#!")
+    form.Controls.Add createBrowser
+    form
+
 
 [<EntryPoint>]
+[<STAThread>]
 let main argv =
-    let message = from "F#" // Call the function
-    printfn "Hello world %s" message
+    let form = createWebForm("http://fsharp.org")
+    Application.Run(form)
     0 // return an integer exit code

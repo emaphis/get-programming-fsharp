@@ -65,7 +65,6 @@ let estimatedAge1 = sprintf "You are about %d years old!" age
 estimatedAge1
 
 // Listing 4.6 Tightly bound scope - pg 54
-
 let estimatedAge2 =
     let age =
         let year = DateTime.Now.Year
@@ -85,16 +84,59 @@ let estimatedAges(familyName, year1, year2, year3) =
     let estimatedAge2 = calculatedAge year2
     let estimatedAge3 = calculatedAge year3
     let averageAge = (estimatedAge1 + estimatedAge2 + estimatedAge3) / 3
-    sprintf "Average ager for family %s is %d" familyName averageAge
+    sprintf "Average age for family %s is %d" familyName averageAge
+
+let avg = estimatedAges("Johnsons", 16, 20, 42)
+
+
+// Try this - pg. 55
+// Refactor this code:
 
 // Listing 4.8 Creating a form to display a web page - pg 56
-#I "C:/Program Files/dotnet/shared/Microsoft.WindowsDesktop.App/5.0.4"
-#r "System.Windows.Forms.dll"
-#r "System.Drawing.Common.dll"
+
 open System
 open System.Net
 open System.Windows.Forms
 
 let webClient = new WebClient()
 let fsharpOrg = webClient.DownloadString(Uri "http://fsharp.org")
-let browser = new WebBrowser(ScriptErrorsSuppressed = true, Dock = DockStyle.Fill, DocumentText = fsharpOrg)
+let browser =
+    new WebBrowser(ScriptErrorsSuppressed = true,
+                   Dock = DockStyle.Fill,
+                   DocumentText = fsharpOrg)
+let form = new Form(Text = "Hello from F#!")
+form.Controls.Add browser
+form.Show()
+
+
+// refactored
+let showWebSite(url) =
+    let getWebText() =
+        let webClient = new WebClient()
+        let fsharpOrg = webClient.DownloadString(Uri url)
+        fsharpOrg
+
+    let createBrowser =
+        new WebBrowser(ScriptErrorsSuppressed = true,
+                       Dock = DockStyle.Fill,
+                       DocumentText = getWebText())
+        
+    let form = new Form(Text = "Hello from F#!")
+    form.Controls.Add createBrowser
+    form.Show()
+
+showWebSite("http://fsharp.org")
+
+// See Program.fs
+
+// Listing 4.9 Refactoring to functions—before
+let r = System.Random()
+let nextValue = r.Next(1, 6)
+let answer = nextValue + 10
+
+// .. after
+let generateRandomNumber max = 
+    let r = System.Random()
+    let nextValue = r.Next(1, max)
+    nextValue + 10
+S

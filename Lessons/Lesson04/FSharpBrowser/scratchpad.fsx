@@ -5,4 +5,4 @@ nut
 #r "System.Windows.Forms.dll"
 open System
 open System.Net
-open System.Windows.Form
+open System.Windows.Forms
