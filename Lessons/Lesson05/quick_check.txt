@@ -1,0 +1,12 @@
+
+Quick check 5.2
+
+1 How does F# infer the return type of a function?
+A- it0 inferrs type of parameters it calls.
+    
+
+2 Can F# infer ypes from the BCL?
+A- No it has problems with generic BCL functions
+
+3 Does F# allow implicit conversions between numeric types?
+A- No.
