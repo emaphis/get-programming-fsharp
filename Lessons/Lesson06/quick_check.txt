@@ -1,0 +1,20 @@
+
+Quick check 6.1  - pg 75
+1 What keyword do you use to mark a value as mutable in F#?
+A- let mutable
+
+2 What is the difference between = in C# and F#?
+A- `=` is always equality in C#, it is bothe equality and binding in F#
+
+3 What keyword do you use in F# to update the value of a mutable object?
+A- `<-`
+
+Quick check 6.2  - pg 79
+1 How do you handle changes in state when working with immutable data?
+A- Passing state to and from the functions. No global state
+
+2 What is a pure function?
+A-  A function that doesn't modify it's environment is pure.
+
+3 What impact does working with immutable data have with multithreading code?
+A- Great. It makes multi-threaded code much easier to reason about.
