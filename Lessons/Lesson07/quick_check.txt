@@ -1,0 +1,23 @@
+
+Quick check 7.1 - pg 85
+1 How often do expressions return a value?
+A- Always
+
+2 How often do statements use side effects?
+A- Always
+
+3 What is the smallest unit of expression in C#
+A- ???
+
+
+Quick check 7.2  - pg 89
+1 What is the difference between a function returning unit and a void method?
+A- void is nothing, unit is sort of a function
+
+2 What is the purpose of the ignore function in F#?
+A- Allow you it throw away the return value of an expresson.
+
+Quick check 7.3  - pg 91
+Is it possible to work with statements rather than expressions in F#?
+A- Yes, return `unit` expressions become the equivalent to statements.
+   `ingnore` forces an expression to return unit.
