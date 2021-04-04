@@ -1,0 +1,10 @@
+
+Quick check 9.1  - pg 105
+
+1 How would you separate values in a tuple in F#?
+A- Commas - ,
+
+2 What is the main distinction between tuples in F# and C# 6?
+A- F# tuples are build into the lanuage
+   C# tuples are a library feature.
+
