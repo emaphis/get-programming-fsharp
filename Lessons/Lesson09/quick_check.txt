@@ -8,3 +8,18 @@ A- Commas - ,
 A- F# tuples are build into the lanuage
    C# tuples are a library feature.
 
+
+Quick check 9.2  - pg 108
+
+1 What is the type signature of nameAndAge in listing 9.4? Why?
+A- (string * string) * int
+   It's a nested type nested, composit type are listed with parentheses
+
+2 How many elements are in nameAndAge?
+A- 2
+
+3 What is the purpose of the wildcard symbol?
+A- Discarding uneeded values in a structure
+
+4 How many wildcards can you use when deconstructing a tuple?
+A- no limit.
