@@ -1,0 +1,31 @@
+
+Quick check 11.1 - pg 128
+
+What’s the difference between a curried function and a tupled function?
+A- curried function takes individual parameters
+   tupled function takes it's parameters in one tupple
+
+
+Quick check 11.2  - pg 130 
+
+Name at least two differences between C# methods and F# let-bound
+functions.
+A- F# functions are always static, can be curried, can't be overloaded
+
+
+Quick check 11.3  - pg 135
+
+1 Which argument to a function is one that can be flipped over a pipeline?
+A- The last
+
+2 Can you use C# or VB .NET methods with the pipeline?
+A- Yes, but they only can take one argument - no currying.
+
+
+Quick check 11.4  - pg 136
+
+1 What operator do you use for composing two functions together?
+A- >>
+
+2 What rule do you need to adhere to in order to compose two functions together?
+A- The output type of one function must match the input type of the next function
