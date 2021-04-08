@@ -1,0 +1,27 @@
+Lesson 23 Quick Checks
+
+
+Quick check 13.1  - pg 153
+
+1 Name one difference between nominal and structural types.
+A- nominal type a typed by names, structural types are differentiated by signatures
+
+2 How do we pass logic between or across code in the OO world?
+A- You pass logic with interfaces and classed implementing that interface.
+
+3 How do we pass logic between or across code in the FP world?
+A- Lamba (unnamed) functions
+
+
+Quick check 13.2  - pg 156
+
+1 Can F# infer the types of higher-order functions?
+A- Yes
+
+2 How can you easily identify higher-order function arguments in VS
+A- By their color. They are highlighted as function calls
+
+Quick check 13.3  - pg 159
+What’s the key difference between passing dependencies in F# and C#?
+A- C# dependencies are passed as classes through interfaces
+   F# dependencies are passed as functions obeying a signature
