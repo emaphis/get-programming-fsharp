@@ -1,0 +1,26 @@
+
+Quick check 12.1  - pg 143
+
+1 Can you store values in namespaces?
+A-  No.  just types
+
+2 Can you store types in modules?
+A. Yes
+
+
+Quick check 12.2  - pg 146
+
+1 In what order are files read for dependencies in F#?
+A- the order they are mentioned in the project file .fproj
+
+2 When can you omit a module declaration in an F# file?
+A- When it module is the main program. 
+
+
+Quick check 12.3  - pg 148
+
+1 What is the AutoOpen attribute for?
+A- Automatically opens dependent modules when parent module is opened
+
+2 What is the default access modifier for values in modules?
+A- public
