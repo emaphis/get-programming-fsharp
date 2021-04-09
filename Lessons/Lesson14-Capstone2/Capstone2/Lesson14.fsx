@@ -96,19 +96,48 @@ newAccount2.Balance = 80M
 
 /// 14.6.1 Adapting code with higher-order functions  - pg 164
 
-let auditAs (operationName: string) (auditFn: Account -> string -> unit)
-    (operaton: decimal -> Account -> Account) (amount: decimal)
-    (account: Account) : Account = 
-    let newAccount =(operaton amount account)
+// let auditAs (operationName: string) (auditFn: Account -> string -> unit)
+//     (operaton: decimal -> Account -> Account) (amount: decimal)
+//     (account: Account) : Account = 
+//     let newAccount =(operaton amount account)
+//     let message = operationName + " new balance: " + newAccount.Balance.ToString()
+//     auditFn newAccount message
+//     newAccount
+
+
+let auditAs operationName auditFn operaton amount account =
+    let now = DateTime.UtcNow
+    auditFn account (sprintf "%O: Performing a %s operation for $%M..." now operationName amount)
+    let newAccount = operaton amount account
+
+    if newAccount = account then auditFn account (sprintf "%O: Transaction rejected!" now)
+    else auditFn account (sprintf "%O: Transaction accepted! Balance is now $%M." now newAccount.Balance)
+
     let message = operationName + " new balance: " + newAccount.Balance.ToString()
-    auditFn newAccount message
+
     newAccount
 
 
-let newAccount3 = auditAs "deposit" consoleAudit deposit 10M account2
+//let newAccount3 = auditAs "deposit" fileSystemAudit deposit 10M account2
+//let newAccount4 = auditAs "withdraw" fileSystemAudit withdraw 50M newAccount3
+
+/// Listing 14.6 Partially applying a curried function
+/// Custom auditing operations using partial apllication
 
 let withdrawWithConsoleAudit = auditAs "withdraw" consoleAudit withdraw
 let depositWithConsoleAudit = auditAs "deposit" consoleAudit deposit
 
 let withdrawWithFileAudit = auditAs "withdraw" fileSystemAudit withdraw
 let depositWithFileAudit = auditAs "deposit" fileSystemAudit deposit
+
+// Testing
+//let nAcc1 = depositWithFileAudit 10M account2
+//let nAcc2 = withdrawWithFileAudit 50M nAcc1
+
+account2
+|> depositWithConsoleAudit 100M
+|> withdrawWithConsoleAudit 50M
+
+// account2
+// |> depositWithFileAudit 100M
+// |> withdrawWithFileAudit 50M
