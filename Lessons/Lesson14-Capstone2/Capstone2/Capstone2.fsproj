@@ -4,7 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="Domain.fs" />
+    <Compile Include="Operations.fs" />
+    <Compile Include="Auditing.fs" />
+    <Compile Include="testscript.fsx" />
     <Compile Include="Lesson14.fsx" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
