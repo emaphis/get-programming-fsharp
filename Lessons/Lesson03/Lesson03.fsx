@@ -1,11 +1,44 @@
-/// Lesson 3 - Enter the REPL - pg 39
+/// Lesson 3 - Enter the REPL - pg 34
+
+/// 3.2  Enter the REPL  - pg 37
+
+/// 3.2.2 F# Interactive  - pg 39
+//  FSI is the F# REPL
+
+
+/// Now you try.
+//  You can enter expressions on a file and eval in FSI
+
+// 1 opening FSI
+// dotnet fsi
+
+// 2
+printfn "Hello World"
+
+
+// 4
+System.DateTime.UtcNow.ToString()
+
+
+/// 3.2.3 State in FSI  - pg 40
+
+/// Listing 3.1 A simple let binding 
+let currentTime = System.DateTime.UtcNow
+currentTime.TimeOfDay.ToString()
+
+
+/// 3.3 F# scripts in Visual Studio  - pg 41
+
+/// 3.3.1 Creating scripts in F#
+/// Now you try  - pg 43
 
 let text = "Hello, world"
 text.Length
 
 
-// Listing 3.2 A simple function definition  - pg 43.
+/// 3.3.3 Working with functions in scripts
 
+/// Listing 3.2 A simple function definition  - pg 43.
 let greetPerson name age =
     sprintf "Hello, %s. You are %d years old" name age
 

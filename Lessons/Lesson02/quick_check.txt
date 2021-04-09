@@ -1,0 +1,15 @@
+Lesson 2  Quick Check
+
+Quick check 2.1  pg 30.
+
+1 What are the two basic project types for F# shipped with Visual Studio?
+A- console apps
+   class libraries.
+   * windows framework if you tinker
+
+2 What is the [<EntryPoint>] attribute for?
+A- Indicates to the CLR which function is the entry point.
+
+3 What are the two types of F# files in a project?
+A-  *.fs   F# source code
+    *.fsx  F# script files

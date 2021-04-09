@@ -1,0 +1,13 @@
+Lesson 4 - Saying a little doing a lot.
+
+
+Quick check 4.1  - pg 51
+
+1 Give at least two examples of values that can be bound to symbols with let.
+A- numbers, strings, 
+
+2 What’s the difference between let and var?
+A- let is immutable,  var is mutable
+
+3 Is F# a static or dynamic language?
+A- static
