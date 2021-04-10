@@ -7,8 +7,8 @@
     <Compile Include="Domain.fs" />
     <Compile Include="Operations.fs" />
     <Compile Include="Auditing.fs" />
-    <Compile Include="testscript.fsx" />
-    <Compile Include="Lesson14.fsx" />
+    <None Include="testscript.fsx" />
+    <None  Include="Lesson14.fsx" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
