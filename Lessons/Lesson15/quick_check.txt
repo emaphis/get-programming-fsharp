@@ -1,0 +1,28 @@
+Lesson 15  Working with collections  - pg 171
+
+Quick check 15.1  - pg 181
+
+1 What are the three main collection modules in F#?
+A- List, Array, Seq.
+
+2 Why is the input collection the last argument to collection functions?
+A- So speciallized collection functions can be build with partial application.
+ - Answer given - piping
+
+3 What are some of the problems with processing collections imperatively?
+A- Complex to reason about, can't be composed.
+
+
+Quick check 15.2  - pg 185
+
+1 How does seq relate to IEnumerable<T>?
+A- seq functions operate on data types that implement IEnumerable<T>
+
+2 How do higher-order functions relate to collection pipelines?
+A- HO functions taking functions and date collections form the bases and
+   framework for pipelines
+
+3 What are the main differences between an imperative and functional approach to working
+with collections?
+A- Imperative operations mutate data collections for efficiency.
+ - Functional opperation produce new data collections for each step.
