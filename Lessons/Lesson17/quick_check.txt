@@ -1,0 +1,28 @@
+Lesson 17  Maps, Dictionaries, and Sets  - pg 197
+
+
+Quick check 17.1  - pg 200
+
+1 What sort of situations would you use a dictionary for?
+A- Fast look-up based on a key, mutable
+
+2 How does F# syntax simplify creating dictionaries?
+A- No type arguments
+
+3 Why might you use the dict function in F#?
+A- Converts a Dictionary to an immuatbel dictionary
+
+
+Quick check 17.2  - pg 202
+
+1 What’s the main difference between Dictionary and Map?
+A- Map is immutable, Dictionary is mutable
+
+2 When should you use Dictionary over Map?
+A- Dictionary has better performance, has better interoperability 
+
+
+Quick check 17.3   - pg 204
+
+What function might you use to simulate simple set-style behavior in a list?
+A- Distinct and DictionaryBt

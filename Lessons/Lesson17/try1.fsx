@@ -1,0 +1,34 @@
+/// Lesson 17  - try1
+
+///  Now you trye  - pg 201
+
+// Now you’re going to create a lookup for all the root folders on your hard disk and the
+// times that they were created:
+// 1 Open a blank script.
+// 2 Get a list of al l directories within the C:\ drive on your computer (you can use
+//   System.IO.Directory.EnumerateDirectories). The result will be a sequence of strings.
+// 3 Convert each string into a full DirectoryInfo object. Use Seq.map to perform the
+//   conversion.
+// 4 Convert each DirectoryInfo into a tuple of the Name of the folder and its Creation-
+//   TimeUtc, again using Seq.map.
+// 5 Convert the sequence into a Map of Map.ofSeq.
+// 6 Convert the values of the Map into their age in days by using Map.map. You can sub-
+//   tract the creation time from the current time to achieve this.
+
+open System
+open System.IO
+
+let rootDirectories =
+    let now = DateTime.UtcNow
+    let path = @"C:\"
+    Directory.EnumerateDirectories(path)
+    |> Seq.map (fun dir -> DirectoryInfo(dir))
+    |> Seq.map (fun dirInfo -> (dirInfo.Name, dirInfo.CreationTimeUtc))
+    |> Map.ofSeq
+    |> Map.map (fun dir time -> (now - time).Days)
+
+let out() =
+    for dir in rootDirectories do
+        printfn "%s - %d days old" dir.Key dir.Value
+
+out()
