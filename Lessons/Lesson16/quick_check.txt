@@ -1,0 +1,34 @@
+Lesson 16 - Useful Colletion Functions.
+
+
+Quick check 16.1  - pg 191
+
+1 What is the F# equivalent of LINQ’s Select method?
+A- List.map
+
+2 What is the imperative equivalent to the iter function?
+A- for each loops
+
+3 What does the pairwise function do?
+A- Divides a list into a list of pair tuples
+
+
+Quick check 16.2  - pg 192
+
+1 When would you use countBy compared to groupBy?
+A- If I needed a count of each category
+
+2 Why would you use groupBy as opposed to partition?
+A- If I had more than two categories
+
+
+Quick check 16.3  - pg 195
+
+1 What is the F# equivalent to LINQ’s Aggregate method?
+A-  fold
+
+2 What is the F# equivalent to LINQ’s Take method?
+A- truncate
+
+3 Give two reasons that you might need to convert between collection types in F#.
+A- performance of collection, convenience functios
