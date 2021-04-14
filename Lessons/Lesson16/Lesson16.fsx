@@ -32,11 +32,15 @@ for number in numbers do
 // functional example
 let outputFunctional = numbers |> List.map timesTwo
 
+// Tuples in higher-order functions
+[ "Issac", 30; "John", 25; "Sarah", 18; "Fay", 27 ]
+|> List.map(fun (name, age) -> (age, name))
+
 // See also: map2, map3, mapi, mapi2, indexed
 
 
 
-/// 16.1.2 iter - pg 88
+/// 16.1.2 iter - pg 188
 // like map but doesn't return anything - side effects
 
 // action:('T -> 'unit) -> list:'T list -> unit
@@ -76,6 +80,7 @@ let orders : Order list = customers |> List.collect(fun c -> c.Orders)
 [ 1; 2; 3; 4; 5] |> List.pairwise
 
 
+// Listing 16.3 - Using pairwise within the context of a larger pipeline  -pg 191
 open System
 
 [ DateTime(2010,5,1)
@@ -86,11 +91,12 @@ open System
 |> List.map(fun (a,b) -> b - a)
 |> List.map(fun time -> time.TotalDays)
 
-// See also: windowed
-
+//  windowed example
+[ 1; 2; 3; 4; 5; 6 ] |> List.windowed 3 
 
 
 /// 6.2 Grouping functions  - pg 192
+// groups data into logical groups
 
 /// 16.2.1 groupBy
 
@@ -110,7 +116,7 @@ persons |> List.countBy (fun person -> person.Town)
 
 // predicate: ('T -> bool) -> list: 'T list -> ('T list * 'T list)
 
-/// Listing 16.4 Splitting a collection in two based on a predicate 
+/// Listing 16.4 Splitting a collection in two based on a predicate  pg 193
 
 let londonCustomers, otherCustomers =
     customers |> List.partition (fun c -> c.Town = "London")
@@ -131,12 +137,23 @@ let min = numbers1 |> List.min
 
 
 /// 16.3.2 Miscellaneous functions  - pg 194
-// find heat item take exists forall contains filter length distinct sortBy
+// find head item take exists forall contains filter length distinct sortBy
+
+let _five = numbers1 |> List.find (fun num -> num = 5.0)
+let _one = numbers1 |> List.head
+let _lst1 = numbers1 |> List.item(3)
+let _lst2 = numbers1 |> List.take(3)
+let _bool1 = numbers1 |> List.exists(fun num -> num > 3.0)
+let _bool2 = numbers1 |> List.forall(fun num -> num >= 2.0)
+let _bool3 = numbers1 |> List.contains(3.0)
+let _lst3 = numbers1 |> List.filter(fun num -> num > 3.0)
+let _cnt1 = numbers1 |> List.length
+let _lst4  = numbers1 |> List.distinct 
 
 
 /// 16.3.3 Converting between collections  - pg 195
 
-/// isting 16.6 Converting between lists, arrays, and sequences
+/// Listing 16.6 Converting between lists, arrays, and sequences
 let numberOne =
     [ 1 .. 5 ]
     |> List.toArray
