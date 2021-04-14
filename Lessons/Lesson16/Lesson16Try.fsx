@@ -15,23 +15,16 @@ open System
 open System.IO
 
 let testPath = @"C:\src\get-programming-fsharp\Lessons"
+let testDir  = @"C:\src\get-programming-fsharp\Lessons\Lesson02"
+let fileName = @"C:\src\get-programming-fsharp\Lessons\Lesson08-Capstone1"
 
-/// get a list of subdirectories given a path.
-let listSubDirs path =
-    Directory.GetDirectories path
-    |> Array.toList
+//Directory.GetFiles(testDir) |> Array.map FileInfo
 
-//testPath |> listSubDirs
+type dirInfo = string * FileInfo[]
 
-/// given a dir get a list of fileInfos in the directory
-let getFileList dir =
-    Directory.GetFiles(dir)
-    |> Array.toList
-    |> List.map (fun file -> FileInfo(file))
+let getDirectories path =
+    Directory.GetDirectories(path)
+    |> Array.collect (fun dir -> [|FileInfo(dir)|])
 
-
-// (testPath
-// |> listSubDirs
-// |> List.collect(fun dir -> getFileList dir))
-
+getDirectories testPath
 
