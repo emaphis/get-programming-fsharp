@@ -1,0 +1,14 @@
+Lesson 18  - Folding your way to success  - pg 206
+
+
+Quick check 18.1  - pg 209
+
+1 What is the general signature of an aggregation?
+A-  'T seq -> 'U
+
+2 What are the main components of any aggregation?
+A- accumulator, collection,  base case.
+
+
+
+
