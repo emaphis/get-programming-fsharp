@@ -28,14 +28,18 @@ do
 
 
 /// 17.1.2 Immutable dictionaries
+// Immuable C# dictinary
 
+/// Listing 17.3 Creating an immutable IDictionary  - pg 199
 let inventory3 : IDictionary<string, float> =
     [ "Apples", 0.33; "Oranges", 0.23; "Bananas", 0.45 ]
     |> dict
 
+inventory3.Count
+
 let bananas2 = inventory3.["Bananas"]
 
-// fails - inentory is immutable
+// fails - inventory is immutable
 // inventory3.Add("Pineapples", 0.85)
 // inventory3.Remove("Bananas")
 
@@ -45,22 +49,25 @@ let bananas2 = inventory3.["Bananas"]
 |> Dictionary
 
 
+
 /// 7.2 The F# Map  - pg 200
+//  Immutable key value lookup.
 
 /// Listing 17.4 Using the F# Map lookup
 
 let inventory4 =
     [ "Apples", 0.33; "Oranges", 0.23; "Bananas", 0.45 ]
-    |> Map.ofList
+    |> Map.ofList  // list to map
 
 
 let apples = inventory4.["Apples"]
-//let pineapples = inventory4.["Pineapples"]
+//let pineapples = inventory4.["Pineapples"]  // keyNotFound exception
 
 let newInventory =
     inventory4
     |> Map.add "Pineapples" 0.87
     |> Map.remove "Apples"
+
 
 
 /// 17.2.1 Useful Map functions  - pg 201
@@ -113,6 +120,5 @@ let fruitsWeCanShare = Set.intersect fruitsILike fruitsJustForMe
 let doILikeAllYourFruits = Set.isSubset fruitsILike fruitsYouLike
 
 
-
-
-
+/// Try this - pg 205.
+// try2.fsx
