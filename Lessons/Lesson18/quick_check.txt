@@ -10,5 +10,20 @@ A-  'T seq -> 'U
 A- accumulator, collection,  base case.
 
 
+Quick check 18.2  - pg 214
+
+1 What’s the difference between reduce and fold?
+A- Reduce uses the first value of the sequence as the starting state value
+   Fold needs the accumulating state value supplied
+
+2 Which two F# keywords are important in order to lazily generate sequences of data?
+A- seq, yield
 
 
+Quick check 18.3 - pg 217
+
+1 What OO pattern is equivalent to reducing functions together?
+A- Composite pattern
+
+2 What happens to a type alias after compilation? Is it available at runtime?
+A- No. They don't exist as a runtime component. 
