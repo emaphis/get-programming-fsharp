@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="ItentifiersLetBindings.fsx" />
+    <None Include="literals.fsx" />
+    <None Include="UseBindings.fsx" />
+    <None Include="Recursion.fsx" />
+    <None Include="Operators.fsx" />
+    <None Include="FunctionApplication.fsx" />
+    <None Include="PartialApplication.fsx" />
+    <None Include="PatternMatching.fsx" />
+    <None Include="ControlFlow.fsx" />
+    <None Include="Lists.fsx" />
+    <None Include="PatternMatchingLists.fsx" />
+    <None Include="ListComprehensions.fsx"/>
+    <None Include="TypesAndTypeInference.fsx"/>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+</Project>
