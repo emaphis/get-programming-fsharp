@@ -17,6 +17,8 @@
     <None Include="PatternMatchingLists.fsx" />
     <None Include="ListComprehensions.fsx"/>
     <None Include="TypesAndTypeInference.fsx"/>
+    <None Include="TupleAndRecordTypes.fsx" />
+    <None Include="DiscriminatedUnions.fsx"/>
     <Compile Include="Library.fs" />
   </ItemGroup>
 </Project>

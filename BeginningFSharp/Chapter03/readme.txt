@@ -13,3 +13,5 @@ Lists.fsx  - pg 38
 PatternMatchingLists.fsx  - pg 40
 ListComprehensions.fsx  - pg 42
 TypesAndTypeInference.fsx  - pg 44
+TupleAndRecordTypes.fsx  - pg 47
+DiscriminatedUnions.fsx  - pg 49
