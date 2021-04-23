@@ -10,7 +10,7 @@
     <None Include="MutableValues.fsx" />
     <None Include="DefiningMutableRecords.fsx" />
     <None Include="TheReferenceType.fsx" />
+    <None Include="Arrays.fsx" />
     <Compile Include="Library.fs" />
   </ItemGroup>
-
 </Project>
