@@ -19,6 +19,10 @@
     <None Include="TypesAndTypeInference.fsx"/>
     <None Include="TupleAndRecordTypes.fsx" />
     <None Include="DiscriminatedUnions.fsx"/>
+    <None Include="RecursiveTypeDefinitions.fsx" />
+    <None Include="UnitsOfMeasure.fsx" />
+    <None Include="Exceptions.fsx" />
+    <None Include="LazyEvaluation.fsx" />
     <Compile Include="Library.fs" />
   </ItemGroup>
 </Project>
