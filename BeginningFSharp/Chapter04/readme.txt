@@ -5,3 +5,5 @@ MutableValues.fsx  - pg 67
 DefiningMutableRecords.fsx   - pg 69
 TheReferenceType.fsx  - pg 70
 Array.fsx   - ps 73
+ControlFlow.fsx  - pg 77
+ObjectsAndInranceMembers.fsx  - pg 82

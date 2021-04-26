@@ -11,6 +11,9 @@
     <None Include="DefiningMutableRecords.fsx" />
     <None Include="TheReferenceType.fsx" />
     <None Include="Arrays.fsx" />
+    <None Include="ControlFlow.fsx" />
+    <None Include="CallingStaticMethodsAndProperties.fsx" />
+    <None Include="ObjectsAndInranceMembers.fsx"/>
     <Compile Include="Library.fs" />
   </ItemGroup>
 </Project>

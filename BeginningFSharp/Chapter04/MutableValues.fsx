@@ -5,7 +5,7 @@
 // The mutable keyword
 
 // a mutable idendifier
-let mutable phrase = "How can I ber sure, " 
+let mutable phrase = "How can I be sure, "
 
 // print the phrase
 printfn "%s" phrase
@@ -40,6 +40,7 @@ let mutableX() =
 // run the demos
 redefineX()
 mutableX()
+
 
 // mutating variables in an inner functions
 // error < 4.0
