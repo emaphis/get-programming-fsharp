@@ -14,6 +14,10 @@
     <None Include="ControlFlow.fsx" />
     <None Include="CallingStaticMethodsAndProperties.fsx" />
     <None Include="ObjectsAndInranceMembers.fsx"/>
+    <None Include="Indexers.fsx" />
+    <None Include="PatternMatching.fsx" />
+    <None Include="Events.fsx" />
+    <None Include="ForwardPipeOperator.fsx" />
     <Compile Include="Library.fs" />
   </ItemGroup>
 </Project>
