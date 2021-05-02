@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="RecordsAsObjects.fsx" />
+    <Compile Include="RecordsAsObjectsWithDraw.fs" />
+    <None Include="TypesWithMembers.fsx" />
+    <None Include="ObjectExpressions.fsx" />
+    <Compile Include="ObjectExpressionsWithInterface.fs" />
+    <None Include="Classes.fsx" />
+    <None Include="OptionalParameters.fsx" />
+    <None Include="AdditionalConstructors.fsx" />
+    <None Include="Interfaces.fsx" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
