@@ -16,6 +16,17 @@
     <None Include="OptionalParameters.fsx" />
     <None Include="AdditionalConstructors.fsx" />
     <None Include="Interfaces.fsx" />
+    <None Include="Inheritance.fsx" />
+    <None Include="MethodsAndInheritance.fsx" />
+    <Compile Include="AccesingBaseClassMembers.fs" />
+    <None Include="PropertiesAndIndexers.fsx" />
+    <None Include="Autoproperties.fsx" />
+    <None Include="OverridingNonFSharpMethods.fsx" />
+    <None Include="AbstractClasses.fsx" />
+    <None Include="StaticMethods.fsx" />
+    <None Include="Casting.fsx" />
+    <Home Include="Delgates.fsx" />
+    <None Include="StructsAndEnums.fsx" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
