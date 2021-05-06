@@ -10,7 +10,8 @@ SignatureFiles.fsi   - pg. 130
 SignatureFiles.fs    - pg. 130
 PrivateAndInternal.fs  - pg. 131
 ModuleScope1.fs        - pg. 132
-ModuleScope2.fs        - pg. 134
+ModuleScope2.fs        - pg. 132
+ModuleScope3.fs        - pg. 133
 OptionalCompilation.fs - pg. 136
 Comments.fs            - pg. 138
 CustomAttributes.fs    - pg. 143

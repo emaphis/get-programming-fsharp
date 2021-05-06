@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
@@ -14,6 +13,10 @@
     <Compile Include="Alias.fs" />
     <Compile Include="SignatureFiles.fsi" />
     <Compile Include="SignatureFiles.fs" />
+    <Compile Include="PrivateAndInternal.fs" />
+    <Compile Include="ModuleScope1.fs" />
+    <Compile Include="ModuleScope2.fs" />
+    <Compile Include="ModuleScope3.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
