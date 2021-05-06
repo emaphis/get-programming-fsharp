@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Modules.fs" />
+    <Compile Include="Modules2.fs" />
+    <Compile Include="Namespaces.fs" />
+    <Compile Include="Namespaces4.fs" />
+    <Compile Include="Modules3.fs" />
+    <Compile Include="Alias.fs" />
+    <Compile Include="SignatureFiles.fsi" />
+    <Compile Include="SignatureFiles.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
