@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="ArithmeticOperators.fsx" />
+    <None Include="FloatingPointFunctions.fsx" />
+    <None Include="TupleAndConversionFunctions.fsx" />
+    <None Include="Reflection.fsx" />
+    <Compile Include="Program.fs"  />
+  </ItemGroup>
+
+</Project>
