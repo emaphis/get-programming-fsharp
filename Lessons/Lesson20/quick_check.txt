@@ -1,0 +1,28 @@
+Lesson 20 - Program Flow in F#
+
+Quick check 20.1  - pg. 234
+1 What restriction does F# place on returning out of loops?
+A- Has no break of continue, so can't break out of a loop.
+
+2 What is the syntax to perform for-each loops in F#?
+A-
+for x in xs do
+   somthing x
+
+3 Can you use while loops in F#?
+A-  Yes.
+
+
+Quick check 20.2   -pg. 239
+1 What are the limitations of switch/case?
+A- Can only switch on one variable, limited types, no binding support
+
+2 Why can unconstrained clauses such as if/then expressions lead to bugs?
+A-  It's easy to write cases that are difficult to reason about
+
+3 What sort of support does pattern matching provide to ensure correctness?
+A- Ensures coverage of all cases. binding
+
+
+Quick check 20.3 What collection types can you not pattern match against?  - pg. 242
+A- Sequences can’t be pattern matched against; only arrays and lists are supported
