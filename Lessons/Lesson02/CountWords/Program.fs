@@ -6,7 +6,6 @@
 open System
 
 
-
 [<EntryPoint>]
 let main argv =
     let len = argv.Length

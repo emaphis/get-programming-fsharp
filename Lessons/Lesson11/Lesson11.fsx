@@ -1,4 +1,4 @@
-/// Lesson 11  building compoable functios - pg 126
+/// Lesson 11  building composable functios - pg 126
 
 /// 11.1   Partial function application
 
@@ -195,4 +195,3 @@ let checkCurrentDirectoryAge =
     >> checkCreation
 
 let description = checkCurrentDirectoryAge()
-

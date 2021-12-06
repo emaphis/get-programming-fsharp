@@ -67,7 +67,7 @@ doStuffWithTwoNumbers(2, 4)
 
 let year = DateTime.Now.Year
 let age1 = year - 1979
-let estimatedAge1 = sprintf "You are about %d years old!" age
+let estimatedAge1 = sprintf "You are about %d years old!" age1
 
 estimatedAge1
 

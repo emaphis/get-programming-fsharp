@@ -88,6 +88,3 @@ let sayHello(someValue) =
     "Hello " + resultOfInner
 
 let result = sayHello(10.5)
-
-
-

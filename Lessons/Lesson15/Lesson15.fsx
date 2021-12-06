@@ -111,7 +111,3 @@ let numbersQuick = [ 1 .. 6 ]
 let head :: tail = numbers
 let moreNumbers = 0 :: numbers
 let evenMoreNumbers = moreNumbers @ [ 7 .. 9 ]
-
-
-
-
