@@ -1,0 +1,29 @@
+ Lesson 22 - Fixing the Billion-Dollar Mistake
+
+Quick check 22.1  - pg. 261
+1 Why can’t C# prevent obvious null references?
+A- Nulls are built into the C# language and librar
+
+2 How does the nullable type improve matters when working with data that might be missing?
+A- You can query a nullable type to see if it has a value.
+
+
+Quick check 22.2  - pg. 264
+1 Can you get null reference exceptions in F#?
+A-  Yes.
+
+2 How should you safely dereference a value that’s wrapped in an option?
+A- Use pattern matching
+
+
+Quick check 22.3  - pg.  267
+1 When should you use Option.map rather than an explicit pattern match?
+A- Map is simpler if you do nothing but only pass back None on a None case
+
+2 What’s the difference between Option.map and bind?
+A -Bind should be used when the mapping function itself returns an Option.
+
+
+Quick check 22.4  - pg. 267
+1 Why are collection try functions safer to use than LINQ’s orDefault methods?
+A- try functions return Option values instead orDefault's null values
