@@ -1,0 +1,31 @@
+Lesson 23 - Business Rules as Code
+pg. 270
+
+
+Quick check 23.1  - pg.  277
+1 What’s the benefit of single-case DUs over raw values?
+A- Compiler enforces the right type is used for the different typs
+   Types are also labeled for use
+
+2 When working with single-case DUs, when should you unwrap values?
+A- When you need to use the raw types
+
+
+Quick check 23.2 - pg. 281
+1 Why don’t you create wrapper types such as single-case DUs in C#?
+A- DU require too much boiler plate.
+
+2 What benefit do you get from using single-case discriminated unions as marker types?
+A- Tu[e checking on the meaning of individual data items.]
+
+3 When should you wrap up raw values into single-case discriminated unions
+A- Early, when the data is first created
+
+ -
+Quick check 23.3   - pg. 282
+1 What benefit does a result provide over an exception?
+A- 
+
+2 How should you convert code that throws exceptions into one that returns a result?
+A-
+
