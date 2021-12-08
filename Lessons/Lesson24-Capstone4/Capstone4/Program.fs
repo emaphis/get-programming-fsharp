@@ -7,12 +7,11 @@ open Capstone4.Domain
 open Capstone4.Operations
 
 
-
 let withdrawWithAudit = auditAs "withdraw" Auditing.composedLogger withdraw
 let depositWithAudit = auditAs "deposit" Auditing.composedLogger deposit
 let loadAccountFromDisk = FileRepository.findTransactionsOnDisk >> Operations.loadAccount
 
-
+[<AutoOpen>]
 module CommandParsing =
     /// Checks whether the command is one of (d)eposit, (w)ithdraw, or e(x)it
     let isValidCommand command =
@@ -21,7 +20,7 @@ module CommandParsing =
     /// Checks whether the command is the exit command.
     let isStopCommand commamd = commamd = 'x'
 
-
+[<AutoOpen>]
 module UserInput =
     ///  A lazy list of commandd to process
     let commands = seq {
@@ -61,9 +60,9 @@ let main _ =
 
     let closingAccount =
         UserInput.commands   // lazzy list of commands
-        |> Seq.filter CommandParsing.isValidCommand
-        |> Seq.takeWhile (not << CommandParsing.isStopCommand)
-        |> Seq.map UserInput.getAmount
+        |> Seq.filter isValidCommand
+        |> Seq.takeWhile (not << isStopCommand)
+        |> Seq.map getAmount
         |> Seq.fold processCommand openingAccount
 
  

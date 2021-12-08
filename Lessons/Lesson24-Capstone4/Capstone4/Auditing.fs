@@ -13,7 +13,7 @@ let printTransaction _ accountId transaction =
         transaction.Accepted
 
 
-// Logs to both console and file system
+/// Logs to both console and file system
 let composedLogger =
     let loggers =
         [ FileRepository.writeTransaction
