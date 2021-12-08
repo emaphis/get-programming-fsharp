@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Capstone4", "Capstone4\Capstone4.fsproj", "{B047E0ED-95E7-45BA-B50C-B20E459974EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5E31B3B-5CCB-41AC-873D-7277688E011C}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B047E0ED-95E7-45BA-B50C-B20E459974EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B047E0ED-95E7-45BA-B50C-B20E459974EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B047E0ED-95E7-45BA-B50C-B20E459974EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B047E0ED-95E7-45BA-B50C-B20E459974EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8081ABF8-D12F-4B2A-B0FF-B173DF1621A9}
+	EndGlobalSection
+EndGlobal
