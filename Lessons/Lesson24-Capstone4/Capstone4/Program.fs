@@ -7,46 +7,51 @@ open Capstone4.Domain
 open Capstone4.Operations
 
 
-let withdrawWithAudit = auditAs "withdraw" Auditing.composedLogger withdraw
-let depositWithAudit = auditAs "deposit" Auditing.composedLogger deposit
-let loadAccountFromDisk = FileRepository.findTransactionsOnDisk >> Operations.loadAccount
+let withdrawWithAudit amount (CreditAccount account as creditAccount) =
+    auditAs "withdraw" Auditing.composedLogger withdraw amount creditAccount account.AccountId account.Owner
+
+let depositWithAudit amount (ratedAccount:RatedAccount) =
+    let accountId = ratedAccount.GetField (fun a -> a.AccountId)
+    let owner = ratedAccount.GetField(fun a -> a.Owner)
+    auditAs "deposit" Auditing.composedLogger deposit amount ratedAccount accountId owner
+
+let tryLoadAccountFromDisk = FileRepository.findTransactionsOnDisk >> Option.map Operations.loadAccount
+
+type Command = AccountCmd of BankOperation | Exit
+
 
 [<AutoOpen>]
 module CommandParsing =
     /// Checks whether the command is one of (d)eposit, (w)ithdraw, or e(x)it
-    let isValidCommand command =
-        command = 'd' || command = 'w' || command = 'x'
-
-    /// Checks whether the command is the exit command.
-    let isStopCommand commamd = commamd = 'x'
+   let tryParse cmd =
+       match cmd with
+       | 'd' -> Some (AccountCmd Deposit)
+       | 'w' -> Some (AccountCmd Withdraw)
+       | 'x' -> Some Exit
+       | _ -> None
 
 [<AutoOpen>]
 module UserInput =
-    ///  A lazy list of commandd to process
-    let commands = seq {
-        while true do
+    ///  A lazy list of commandd to proces
+    let commands =
+        Seq.initInfinite(fun _ ->
             Console.Write "(d)eposit, (w)ithdraw or e(x)it: "
-            yield Console.ReadKey().KeyChar
-            Console.WriteLine() }
-
+            let output = Console.ReadKey().KeyChar
+            Console.WriteLine()
+            output)
 
     /// Takes in a command and converts it to a tuple of the command and also an amount
     let getAmount command =
-        Console.WriteLine()
-        Console.Write "Enter Amount: "
-        command, Console.ReadLine() |> Decimal.Parse
-
-
-/// Takes in an account and a (command, amount) tuple. It should then apply
-/// the appropriate action on the account and return the new account back out again
-let processCommand account (command, amount) =
-    printfn ""
-    let account =
-        if   command = 'd' then depositWithAudit amount account
-        elif command = 'w' then withdrawWithAudit  amount account
-        else account
-    printfn "Current balance is $%M" account.Balance
-    account
+        let captureAmount _ =
+            Console.Write "Enter Amount: "
+            Console.ReadLine() |> Decimal.TryParse
+        Seq.initInfinite captureAmount
+        |> Seq.choose(fun amount ->
+            match amount with
+            | true, amount when amount <= 0M -> None
+            | false, _ -> None
+            | true, amount -> Some(command, amount))
+        |> Seq.head
 
 
 [<EntryPoint>]
@@ -54,17 +59,45 @@ let main _ =
 
     let openingAccount =
         Console.Write "Please enter your name: "
-        Console.ReadLine() |> loadAccountFromDisk
+        let owner = Console.ReadLine()
 
-    printfn "Current balance is $%M" openingAccount.Balance
+        let account = tryLoadAccountFromDisk owner
+        match account with
+        | Some account -> account
+        | None ->
+            InCredit(CreditAccount { AccountId = Guid.NewGuid()
+                                     Balance = 0M
+                                     Owner = { Name = owner } })
 
+    printfn "Current balance is $%M" (openingAccount.GetField(fun a -> a.Balance))
+
+    let processCommand account (command, amount) =
+        printfn ""
+        let account =
+            match command with
+            | Deposit -> account |> depositWithAudit amount
+            | Withdraw ->
+                match account with
+                | InCredit account -> account |> withdrawWithAudit amount
+                | Overdrawn _ ->
+                    printfn "You cannot withdraw funds as your account is overdrawn!"
+                    account
+        printfn "Current balance is £%M" (account.GetField(fun a -> a.Balance))
+        match account with
+        | InCredit _ -> ()
+        | Overdrawn _ -> printfn "Your account is overdrawn!!"
+        account
+    
     let closingAccount =
-        UserInput.commands   // lazzy list of commands
-        |> Seq.filter isValidCommand
-        |> Seq.takeWhile (not << isStopCommand)
+        commands   // lazzy list of commands
+        |> Seq.choose tryParse
+        |> Seq.takeWhile ((<>) Exit)
+        |> Seq.choose(fun cmd ->
+            match cmd with
+            | Exit -> None
+            | AccountCmd cmd -> Some cmd)
         |> Seq.map getAmount
         |> Seq.fold processCommand openingAccount
-
  
     printfn ""
     printfn "Closing Balance:\r\n %A" closingAccount
