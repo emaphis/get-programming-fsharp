@@ -1,0 +1,31 @@
+Lesson 25  - Consuming C# From F#  - pg. 291
+
+
+Quick check 25.1  - pg 301
+1 Can you share F# and C# projects in the same solution?
+A- Yes.
+
+2 Name some types of assets that you can reference from an F# solution.
+A- Code (classes), Projects (in same solution), Assemblies(Nuget)
+
+3 What kind of type is not well supported in F#?
+A- Dynamic types
+
+
+Quick check 25.2   - pg. 305 
+1 Can you debug across languages?
+A- Yes.
+
+2 Can you go to a definition across languages?
+A- Yes.
+
+3 How do you reference a library from within a script?
+A- #r "..\..\Path to .dll"
+
+
+Quick check 25.3  - pg. 309
+1 What is an object expression?
+A- An expression that creates an object from an interface
+
+2 How do you convert between a nullable and an option in F#
+A-  Option.ofNullaable  Option.toNullable as conversions
