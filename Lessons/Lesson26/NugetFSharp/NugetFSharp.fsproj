@@ -10,9 +10,8 @@
     <Compile Include="Library1.fs" />
   </ItemGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
     <PackageReference Include="Humanizer" Version="2.13.14" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>

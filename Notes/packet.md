@@ -1,5 +1,7 @@
 # Packet notes
 
+<https://fsprojects.github.io/Paket/learn-how-to-use-paket.html>
+
 <https://fsprojects.github.io/Paket/get-started.html#Install-the-Paket-bootstrapper-legacy>
 
 See for an example: <https://github.com/cartermp/MinimalPaketAndFakeSample>
