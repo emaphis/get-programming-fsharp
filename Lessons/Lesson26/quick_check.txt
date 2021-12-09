@@ -1,0 +1,21 @@
+// Lesson 26  - Working with Nuget Packages  - pg. 310
+
+
+Quick check 26.1  - pg. 316
+1 Can you use NuGet packages with F# projects?
+A- YES.
+
+2 What do you need to be aware of when calling #load on F# files?
+A- You need to load dependent assemblies by using #r or #load
+
+3 How can you make life easier when referencing assemblies and files?
+A- Using autogenerate functionality and project load files
+
+
+Quick check 26.2   - pg. 320
+1 Why can it be difficult to work with NuGet packages from F# scripts when using the 
+NuGet tool?
+A-
+
+2 What does the paket.dependencies file contain?
+A-
