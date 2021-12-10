@@ -1,0 +1,14 @@
+Lesson 28 - Architecting Hybred Language Applications  - pg. 231
+
+Quick check 28.1
+1 What features from the F# type system might be missing for simpler domains such as
+  JSON or CSV?
+  A- Discriminated Unions
+
+2 Why should you consider having a rich internal, and simpler external, domain?
+A- Taking advantage of F# modeing abilitys while a simpler model makes it easer to
+   consume from C#
+
+3 Can you name a scenario for which C# might be a better fit than F#?
+A- Writing GUIs, code generators for more popular Languages.
+
