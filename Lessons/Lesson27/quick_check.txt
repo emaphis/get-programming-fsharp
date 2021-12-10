@@ -1,0 +1,26 @@
+Lesson 27  - Exposing F# Types and Functions to C#
+Pg.  321
+
+
+Quick check 27.1  pg. 326
+1 How are records represented in C#?
+A- Classes. Default constructor,  getter only acces
+
+2 Why are discriminated unions sometimes difficult to reason about in C#?
+A- Without pattern matching DU require methods to process
+
+
+Quick check 27.2  pg. 328
+1 How are modules declared in F# rendered in C#?
+A- They are rendered as static classes
+
+2 Can you use F#-declared curried functions in C#?
+A- Yes. But as tuppled functions
+
+
+Quick check 27.3  pg. 330
+1 What do tuples render as in C#?
+A- System.Tuple
+
+2 What is the purpose of the [<CLIMutable>] attribute
+A- T
