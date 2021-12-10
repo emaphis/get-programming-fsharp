@@ -2,6 +2,7 @@
 
 namespace Capstone5.Domain
 
+open Newtonsoft.Json
 open System
 
 type BankOperation = Deposit | Withdraw
@@ -21,18 +22,13 @@ type RatedAccount =
         | InCredit (CreditAccount account) -> getter account
         | Overdrawn account -> getter account
 
+
 module Transaction =
 
     /// Serializes a transaction
     let serialized transaction =
-        sprintf "%O***%s***%M"
-            transaction.Timestamp
-            transaction.Operation
-            transaction.Amount
+        JsonConvert.SerializeObject transaction
 
     /// Deserializes a transaction
     let deserialize (fileContents:string) =
-        let parts = fileContents.Split([|"***"|], StringSplitOptions.None)
-        { Timestamp = DateTime.Parse parts.[0]
-          Operation = parts.[1]
-          Amount = Decimal.Parse parts.[2] }
+        JsonConvert.DeserializeObject<Transaction> fileContents

@@ -15,7 +15,7 @@ let depositWithAudit amount (ratedAccount:RatedAccount) =
     let owner = ratedAccount.GetField(fun a -> a.Owner)
     auditAs "deposit" Auditing.composedLogger deposit amount ratedAccount accountId owner
 
-let tryLoadAccountFromDisk = FileRepository.findTransactionsOnDisk >> Option.map Operations.loadAccount
+let tryLoadAccountFromDisk = FileRepository.tryFindTransactionsOnDisk >> Option.map Operations.loadAccount
 
 type Command = AccountCmd of BankOperation | Exit
 

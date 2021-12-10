@@ -29,7 +29,7 @@ let loadTransactions (folder:string) =
 
 
 /// Finds all transactions from disk for specific owner.
-let findTransactionsOnDisk =
+let tryFindTransactionsOnDisk =
     tryFindAccountFolder >> Option.map loadTransactions
 
 
@@ -37,6 +37,6 @@ let findTransactionsOnDisk =
 let writeTransaction accountId owner transaction =
     let path = buildPath(owner, accountId)
     path |> Directory.CreateDirectory |> ignore
-    let filePath = sprintf "%s/%d.txt" path (DateTime.UtcNow.ToFileTimeUtc())
+    let filePath = sprintf "%s/%d.txt" path (transaction.Timestamp.ToFileTimeUtc())
     let line = Transaction.serialized transaction
     File.WriteAllText(filePath, line)
