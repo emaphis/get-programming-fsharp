@@ -5,7 +5,8 @@ using System.Collections.ObjectModel;
 
 namespace Capstone5
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterfaceAttribute]
     public class MainViewModel
     {
         public Customer Owner { get; private set; }
