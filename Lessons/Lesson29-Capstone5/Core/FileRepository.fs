@@ -37,6 +37,6 @@ let tryFindTransactionsOnDisk =
 let writeTransaction accountId owner transaction =
     let path = buildPath(owner, accountId)
     path |> Directory.CreateDirectory |> ignore
-    let filePath = sprintf "%s/%d.txt" path (transaction.Timestamp.ToFileTimeUtc())
+    let filePath = sprintf "%s/%d.txt" path (DateTime.UtcNow.ToFileTimeUtc())
     let line = Transaction.serialized transaction
     File.WriteAllText(filePath, line)
