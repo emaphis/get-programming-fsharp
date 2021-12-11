@@ -1,0 +1,21 @@
+Lesson 30  - Introducing Type Providers  pg. 355
+
+
+
+Quick check 30.1  - pg. 357
+1 What is a type provider?
+A- A code generator that works with the F# compiler
+
+2 How do type providers differ from T4 templates?
+A- Type providers work with the compiler and work at edit time
+
+3 Is the number of type providers fixed?
+A- No, type providers can be written for new types
+
+
+Quick check 30.2  - pg 363
+1 What are erased types?
+A- Types are erased at compile time to basic types
+
+2 What are backtick members?
+A- Member names that contain spaces and other unusual chars.

@@ -1,14 +1,14 @@
 source https://api.nuget.org/v3/index.json
 
 storage: none
-framework: net6.0, net5.0, netstandard2.0, netstandard2.1
-nuget Azure.Storage.Blobs 12.10.0
-nuget Fody 6.6.0
-nuget FSharp.Core 6.0.1 content: none
-nuget Humanizer 2.13.14
-nuget Microsoft.CSharp 4.7.0
-nuget Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers 0.3.256001
-nuget Microsoft.Windows.Compatibility 6.0.0
-nuget Newtonsoft.Json 13.0.1
-nuget PropertyChanged.Fody 3.4.0
-nuget System.Data.DataSetExtensions 4.5.0
+framework: net6.0, net5.0
+nuget Fody
+nuget FSharp.Core
+nuget FSharp.Data
+nuget Microsoft.CSharp
+nuget Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers
+nuget Microsoft.Windows.Compatibility
+nuget Newtonsoft.Json
+nuget Humanizer
+nuget PropertyChanged.Fody
+nuget XPlot.GoogleCharts

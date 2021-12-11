@@ -1,1 +1,9 @@
 FSharp.Core
+FSharp.Data
+Fody
+Microsoft.CSharp
+Humanizer
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers
+Microsoft.Windows.Compatibility
+PropertyChanged.Fody
+XPlot.GoogleCharts
