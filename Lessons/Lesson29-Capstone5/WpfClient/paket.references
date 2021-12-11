@@ -1,0 +1,7 @@
+Fody
+FSharp.Core
+Microsoft.CSharp
+PropertyChanged.Fody
+System.Data.DataSetExtensions
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers
+Microsoft.Windows.Compatibility

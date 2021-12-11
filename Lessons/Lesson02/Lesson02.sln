@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{53ED9EB8-B51A-4A43-82D8-0DC96AD4926F}"
+	ProjectSection(SolutionItems) = preProject
+		..\paket.dependencies = ..\paket.dependencies
+	EndProjectSection
+EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MyFirstFSharpApp", "MyFirstFSharpApp\MyFirstFSharpApp.fsproj", "{D3D1727D-DE0A-49FC-BD05-A2828FB4D182}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CountWords", "CountWords\CountWords.fsproj", "{1123B20D-7FB4-4E54-8103-8279859A9688}"
