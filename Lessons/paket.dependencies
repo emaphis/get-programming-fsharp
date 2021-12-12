@@ -2,13 +2,8 @@ source https://api.nuget.org/v3/index.json
 
 storage: none
 framework: net6.0, net5.0
-nuget Fody
 nuget FSharp.Core
 nuget FSharp.Data
-nuget Microsoft.CSharp
-nuget Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers
-nuget Microsoft.Windows.Compatibility
-nuget Newtonsoft.Json
-nuget Humanizer
-nuget PropertyChanged.Fody
 nuget XPlot.GoogleCharts
+nuget FSharp.Data.SqlClient
+nuget SqlProvider
