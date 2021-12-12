@@ -1,0 +1,23 @@
+Lesson 31  - Building Schemeas from Live Data
+Pg. 365
+
+
+Quick check 31.1  pg. 369
+1 Which type provider would you use to read data from a SOAP service?
+A- WSDL type provider
+
+2 Which package do the JSON and HTML type providers live in?
+A- FSharp.Data
+
+
+Quick check 31.2  - pg.  371
+1 Why should you be wary of working with data sources that charge per request?
+A- Every acces, including Intellisense makes a costly queury
+
+2 Why can working with live data sources be an issue if you lose internet access?
+A- I you loose connection you lose type information
+
+
+Quick check 31.3  - pg. 374
+What does it mean to redirect a type provider at runtime?
+A- Using a different data source at run time
