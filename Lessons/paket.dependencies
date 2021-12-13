@@ -2,8 +2,5 @@ source https://api.nuget.org/v3/index.json
 
 storage: none
 framework: net6.0, net5.0
-nuget FSharp.Core
 nuget FSharp.Data
 nuget XPlot.GoogleCharts
-nuget FSharp.Data.SqlClient
-nuget SqlProvider

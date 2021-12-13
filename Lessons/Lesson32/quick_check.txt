@@ -1,0 +1,24 @@
+Lesson 32  - Working with SQL
+pg. 376
+
+
+Quick check 32.1  - pg. 383
+
+1 How does the SqlCommandProvider remove the risk of “stringly-typed” queries?
+A-
+
+2 In addition to manually creating INSERT statements, how else does the SqlClient package
+  let you perform data insertion?
+A-
+
+
+Quick check 32.2  - pg. 387
+
+1 What’s the key distinction between SqlClient and SQLProvider?
+A-
+
+2 Is SQLProvider coupled to just MS SQL Server?
+A-
+
+
+
