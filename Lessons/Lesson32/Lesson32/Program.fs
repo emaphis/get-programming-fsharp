@@ -1,19 +1,17 @@
 ﻿
-open FSharp.Data
+open System
+open Microsoft.Data.SqlClient
 
-[<Literal>]
-let connectionString = 
-    @"Data Source=BOODLEPOODLE\SQLEXPRESS;Initial Catalog=AdventureWorks2019;Integrated Security=True"
+let [<Literal>] Conn =
+ //@"Persist Security Info=False;Trusted_Connection=True; database=AutoLot; server = (localdb)\\mssqllocaldb";
+ // @"Server=localhost\SQLEXPRESS;Database=AdventureWorks2019;Trusted_Connection=True;TrustServerCertificate=True";
+    @"server=(localdb)\mssqllocaldb;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
 
+let connection = new SqlConnection() 
 
-do
-    use cmd = new SqlCommandProvider<"
-        SELECT TOP(@topN) FirstName, LastName, SalesYTD 
-        FROM Sales.vSalesPerson
-        WHERE CountryRegionName = @regionName AND SalesYTD > @salesMoreThan 
-        ORDER BY SalesYTD
-        " , connectionString>(connectionString)
+connection.ConnectionString <- Conn
 
-    cmd.Execute(topN = 3L, regionName = "United States", salesMoreThan = 1000000M) |> printfn "%A"
-
-
+connection.Open()
+let state = connection.State;
+Console.WriteLine("State = " + state.ToString());
+//let getInventory = SqlCommandProvider< @"SELECT * FROM SalesLT.Product", Conn>
