@@ -7,18 +7,18 @@
 
 // Now you try  - pg. 377
 (*
-First you’ll deploy a sample database locally that you’ll use for the remainder of the
+First youï¿½ll deploy a sample database locally that youï¿½ll use for the remainder of the
 lesson:
 
 1 In Visual Studio, navigate to the SQL Server Object Explorer (View menu).
 
 1 Expand the SQL Server node.
 
-2 You should see a node underneath that begins with (localdb). I can’t tell you
-  which one it’ll be, as the SQL team keeps changing the format with each release,
-  but it’ll look something like (localdb)\ProjectsV12 or (localdb)\MSSQLLocalDB.
+2 You should see a node underneath that begins with (localdb). I canï¿½t tell you
+  which one itï¿½ll be, as the SQL team keeps changing the format with each release,
+  but itï¿½ll look something like (localdb)\ProjectsV12 or (localdb)\MSSQLLocalDB.
 
-3 If you don’t see any (localdb) nodes, you probably need to install SQL Server
+3 If you donï¿½t see any (localdb) nodes, you probably need to install SQL Server
   Data Tools (SSDT). This lightweight installer should be directly available from
   within Extensions and Updates in Visual Studio.
 
@@ -63,16 +63,37 @@ retrieve some data from it:
 
 //#I @"C:\users\emaph\.nuget\packages\"
 //#r @"FSharp.Data.SqlClient\2.0.7\lib\netstandard2.0\FSharp.Data.SqlClient.dll"
-
+#r "nuget: System.Data.SqlClient"
 #r  "nuget: FSharp.Data.SqlClient"
 
-
-
+open System.Data.SqlClient
 open FSharp.Data
-let [<Literal>] Conn = "Server=(localdb)\MSSQLLocalDb;Database=AdventureWorksLT;Integrated Security=SSPI"
-type GetCostumers = SqlCommandProvider<"SELECT * FROM SalesLT.Customer", Conn>
 
- 
-let customers = GetCostumers.Create(Conn).Execute() |> Seq.toArray
-let customer = customers.[0]
-printfn "%s %s works for %s" customer.FirstName customer.LastName (Option.get customer.CompanyName) //Option.defaultValue seems to not been available... beware exceptions!
+let xxx = System.Data.SqlClient.ApplicationIntent
+
+let [<Literal>] Conn =
+    @"server=(localdb)\mssqllocaldb;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
+
+
+type GetDate = SqlCommandProvider<"SELECT GETDATE() AS Now", Conn>
+
+
+//Fibonacci! Not again! :)
+[<Literal>]
+let fibonacci = "
+    WITH Fibonacci ([N-1], N) AS
+    ( 
+        --seed
+	    SELECT CAST(0 AS BIGINT), CAST(1 AS BIGINT)
+
+	    UNION ALL
+        --fold
+	    SELECT N, [N-1] + N
+	    FROM Fibonacci
+    )
+
+    SELECT TOP(@Top) [N-1] 
+    FROM Fibonacci
+"
+type FibonacciQuery = SqlCommandProvider<fibonacci, Conn>
+

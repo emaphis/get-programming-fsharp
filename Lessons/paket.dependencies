@@ -4,4 +4,5 @@ storage: none
 framework: net6.0, net5.0
 nuget FSharp.Data
 nuget XPlot.GoogleCharts
-nuget Microsoft.Data.SqlClient
+nuget System.Data.SqlClient
+nuget FSharp.Data.SqlClient

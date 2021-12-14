@@ -1,17 +1,16 @@
 ﻿
 open System
-open Microsoft.Data.SqlClient
+open System.Data.SqlClient
+open FSharp.Data
+// Microsoft.Data.SqlClient
+// System.Data.SqlClient
 
 let [<Literal>] Conn =
- //@"Persist Security Info=False;Trusted_Connection=True; database=AutoLot; server = (localdb)\\mssqllocaldb";
- // @"Server=localhost\SQLEXPRESS;Database=AdventureWorks2019;Trusted_Connection=True;TrustServerCertificate=True";
     @"server=(localdb)\mssqllocaldb;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
 
-let connection = new SqlConnection() 
+type GetDate = SqlCommandProvider<"SELECT GETDATE() AS Now", Conn>
 
-connection.ConnectionString <- Conn
+//type GetCustomers = SqlCommandProvider<"SELECT * FROM SalesLT.Customer", Conn>
+//let customers = GetCustomers.Create(Conn).Execute() |> Seq.toArray
+//let customer = customers.[0]
 
-connection.Open()
-let state = connection.State;
-Console.WriteLine("State = " + state.ToString());
-//let getInventory = SqlCommandProvider< @"SELECT * FROM SalesLT.Product", Conn>
