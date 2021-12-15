@@ -1,6 +1,7 @@
 
 #r "C:/Users/emaph/.nuget/packages/sqlprovider/1.2.10/lib/netstandard2.0/FSharp.Data.SqlProvider.dll"
 
+//open Google.Protobuf
 open FSharp.Data.Sql
 
 let [<Literal>] connString = "Server=localhost;Database=test;User=root;Password=abc123"

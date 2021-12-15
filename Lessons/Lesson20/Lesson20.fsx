@@ -221,7 +221,7 @@ handleCustomers1 list3
 handleCustomers1 list4
 
 /// Listing 20.8 Matching against lists
-let handleCustomer customers =
+let handleCustomers customers =
     match customers with
     | [] -> failwith "No customers supplied!"
     | [ customer ] -> printfn "Single customer, name is %s" customer.Name
@@ -230,9 +230,9 @@ let handleCustomer customers =
     | customers -> printfn "Customers supplied: %d" customers.Length
 
 //handleCustomer list1
-handleCustomer list2
-handleCustomer list3
-handleCustomer list4
+handleCustomers list2
+handleCustomers list3
+handleCustomers list4
 
 // 20.3.2 Records  - pg. 241
 
