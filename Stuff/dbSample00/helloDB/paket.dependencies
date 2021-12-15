@@ -1,0 +1,7 @@
+source https://api.nuget.org/v3/index.json
+
+storage: none
+framework: net5.0, netstandard2.0, netstandard2.1
+nuget Google.Protobuf 3.14.0.0
+nuget MySql.Data
+nuget SqlProvider

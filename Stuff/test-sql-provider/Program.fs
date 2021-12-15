@@ -1,29 +1,38 @@
 ﻿
-//open FSharp.Data.Sql
-
-let [<Literal>] Conn = @"Server=(localdb)\MSSQLLocalDb;Database=AdventureWorksLT;Integrated Security=SSPI"
-//type GetCustomers = SqlCommandProvider<"SELECT * FROM SalesLT.Customer", Conn>
-//let customers = GetCustomers.Create(Conn).Execute() |> Seq.toArray
-//let customer = customers.[0]
+open System
 
 open FSharp.Data.Sql
 
-module Database =
 
-    [<Literal>]
-    let dbVendor = Common.DatabaseProviderTypes.MSSQLSERVER
+let ver = Environment.Version
+Console.WriteLine("Version = " + ver.ToString())
+
+open FSharp.Data.Sql
+
+let [<Literal>] dbVendor = Common.DatabaseProviderTypes.MSSQLSERVER
+
+let [<Literal>] connStr =
+    @"server=(localdb)\mssqllocaldb;database=HR;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
+//@"server=(localdb)\mssqllocaldb;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
 
 
-   // [<Literal>]
-    //let connString =
-      //  "Data Source=localhost;Database=MyDatabase;User Id=user;Password='my-password-here'"
+type hr = FSharp.Data.Sql.SqlDataProvider<Common.DatabaseProviderTypes.MSSQLSERVER, connStr>
+let dc = hr.GetDataContext()
 
-    [<Literal>]
-    let indivAmount = 1000
+type HR = SqlDataProvider<Common.DatabaseProviderTypes.MSSQLSERVER, connStr>
 
-    [<Literal>]
-    let useOptTypes = true
+(*
+[<EntryPoint>]
+let main argv =
+    let ctx = HR.GetDataContext()
+    let employeesFirstName = 
+        query {
+            for emp in ctx.Dbo.Employees do
+            select emp.FirstName
+        } |> Seq.head
 
-    type sql = SqlDataProvider<dbVendor, Conn, IndividualsAmount=indivAmount, UseOptionTypes=useOptTypes>
+    printfn "Hello %s!" employeesFirstName
+    0 // return an integer exit code
 
-    // The type provider 'FSharp.Data.Sql.SqlTypeProvider' reported an error: System.Data.SqlClient is not supported on this platform.
+    
+*)
