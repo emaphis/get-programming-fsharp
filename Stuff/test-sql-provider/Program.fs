@@ -9,17 +9,33 @@ Console.WriteLine("Version = " + ver.ToString())
 
 open FSharp.Data.Sql
 
-let [<Literal>] dbVendor = Common.DatabaseProviderTypes.MSSQLSERVER
-
-let [<Literal>] connStr =
-    @"server=(localdb)\mssqllocaldb;database=HR;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
+let [<Literal>] connString =
+    "Server=localhost;Database=test;User=root;Password=abc123"
+//    @"server=(localdb)\mssqllocaldb;database=HR;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
 //@"server=(localdb)\mssqllocaldb;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
 
+[<Literal>]
+let dbVendor = Common.DatabaseProviderTypes.MYSQL
 
-type hr = FSharp.Data.Sql.SqlDataProvider<Common.DatabaseProviderTypes.MSSQLSERVER, connStr>
-let dc = hr.GetDataContext()
+[<Literal>]
+let resPath = "C:/Users/emaph/.nuget/packages/mysql.data/8.0.27/lib/netstandard2.0"
 
-type HR = SqlDataProvider<Common.DatabaseProviderTypes.MSSQLSERVER, connStr>
+[<Literal>]
+let indivAmount = 1000
+
+[<Literal>]
+let useOptTypes = true
+
+type sql = SqlDataProvider<
+                dbVendor,
+                connString,
+                ResolutionPath = resPath,
+                IndividualsAmount = indivAmount,
+                UseOptionTypes = useOptTypes,
+                Owner = "root"
+            >
+let ctx = sql.GetDataContext()
+
 
 (*
 [<EntryPoint>]
