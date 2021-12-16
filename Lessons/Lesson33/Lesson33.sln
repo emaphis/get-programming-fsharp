@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ApiApp", "ApiApp\ApiApp.fsproj", "{CDF4A70E-27F6-494C-9F51-418EDDA60F24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1503BE58-39F8-4FB5-8013-57F2552A829D}"
+	ProjectSection(SolutionItems) = preProject
+		quck_check.txt = quck_check.txt
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDF4A70E-27F6-494C-9F51-418EDDA60F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF4A70E-27F6-494C-9F51-418EDDA60F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF4A70E-27F6-494C-9F51-418EDDA60F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF4A70E-27F6-494C-9F51-418EDDA60F24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAE3CC8A-5966-48B4-A184-3DF708BBB406}
+	EndGlobalSection
+EndGlobal

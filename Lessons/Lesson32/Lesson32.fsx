@@ -61,21 +61,23 @@ retrieve some data from it:
 // Listing 32.1 Querying a database with the SqlCommandProvider type provider  - pg. 378
 
 
-//#I @"C:\users\emaph\.nuget\packages\"
-//#r @"FSharp.Data.SqlClient\2.0.7\lib\netstandard2.0\FSharp.Data.SqlClient.dll"
-#r "nuget: System.Data.SqlClient"
-#r  "nuget: FSharp.Data.SqlClient"
+#I @"C:\users\emaph\.nuget\packages\"
+#r @"System.Data.SqlClient "
+#r @"FSharp.Data\4.2.6\lib\netstandard2.0\FSharp.Data.dll"
+#r @"FSharp.Data.SqlClient\2.0.7\lib\netstandard2.0\FSharp.Data.SqlClient.dll"
+//#r "nuget: System.Data.SqlClient"
+//#r  "nuget: FSharp.Data.SqlClient"
 
-open System.Data.SqlClient
+//open System.Data.SqlClient
 open FSharp.Data
 
-let xxx = System.Data.SqlClient.ApplicationIntent
+//let xxx = System.Data.SqlClient.ApplicationIntent
 
 let [<Literal>] Conn =
-    @"server=(localdb)\mssqllocaldb;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
+    @"Server=(localdb)\MSSQLLocalDB;database=AdventureWorksLT;Trusted_Connection=True;Integrated Security=SSPI;TrustServerCertificate=True";
 
 
-type GetDate = SqlCommandProvider<"SELECT GETDATE() AS Now", Conn>
+type GetDate = SqlCommandProvider<"SELECT * FROM SalesLT.Product", Conn>
 
 
 //Fibonacci! Not again! :)
