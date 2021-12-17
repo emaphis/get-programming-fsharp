@@ -16,6 +16,7 @@
 
 open FSharp.Data
 
+
 //type TvListing = JsonProvider<"https://www.bbc.co.uk/programmes/genres/comedy/schedules/upcoming.json">
 //let tvListing = TvListing.GetSample()
 // let title = tvListing.Broadcasts.[0].Programme.DisplayTitles.Title
@@ -64,7 +65,7 @@ more to download:
 *)
 
 #r @"C:\Apps\bin\Bin\netstandard2.0\Newtonsoft.Json.dll"
-#r @"google.datatable.net.wrapper\4.1.0\lib\net5.0\Google.DataTable.Net.Wrapper.dll"
+#r @"google.datatable.net.wrapper\4.1.0\lib\netstandard2.0\Google.DataTable.Net.Wrapper.dll"
 #r @"xplot.googlecharts\3.0.1\lib\netstandard2.0\XPlot.GoogleCharts.dll"
 
 open XPlot.GoogleCharts

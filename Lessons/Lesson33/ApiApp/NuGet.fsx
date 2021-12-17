@@ -29,8 +29,8 @@ let getDownLoadsForPackage packageName =
         //|> Array.map (fun row -> row.ToString())
 
 
-let package2 = getDownLoadsForPackage "Newtonsoft.Json"
-let lists = package2.Tables.Table2.Rows.GetLength
+let package2 = getDownLoadsForPackage "System.Drawing.Common"
+let lists = package2.Tables.``NuGet packages (9)``.Name
 
 
 lists
