@@ -9,7 +9,7 @@ let x2 = 1 - 1
 open FSharp.Core.Operators.Checked
 let x = System.Int32.MaxValue + 1
 
-// structural equality
+// structural equality =
 
 type person = { name : string; favoriteColor : string }
 
@@ -20,6 +20,7 @@ let robert3 = { name = "Robert" ; favoriteColor = "Green" }
 printfn "(robert1 = robert2): %b" (robert1 = robert2)
 printfn "(robert1 <> robert3): %b" (robert1 <> robert3)
 
+// Structural comparison is also used to implement the > and < operators,
 printfn "(robert2 > robert3): %b" (robert2 > robert3)
 
 // physcally equal
