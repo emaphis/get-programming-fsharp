@@ -10,7 +10,9 @@
     <None Include="FloatingPointFunctions.fsx" />
     <None Include="TupleAndConversionFunctions.fsx" />
     <None Include="Reflection.fsx" />
-    <Compile Include="Program.fs"  />
+    <None Include="CollectionsSeqModule.fsx" />
+    <None Include="PrinfModule.fsx" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>
